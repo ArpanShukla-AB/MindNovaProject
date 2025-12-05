@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Take our mental health assessment to identify areas where you might need support.">
+  <title>Mental Health Assessment - MIND NOVA</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    .assessment-container {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: var(--spacing-xl);
+      max-width: var(--container-max-width);
+      margin: 0 auto;
+      padding: 0 var(--container-padding);
+    }
+    
+    .progress-sidebar {
+      background: var(--color-background-alt);
+      padding: var(--spacing-lg);
+      border-radius: var(--border-radius-lg);
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+    
+    .progress-item {
+      padding: var(--spacing-md);
+      margin-bottom: var(--spacing-sm);
+      border-left: 3px solid var(--color-border);
+      color: var(--color-text-light);
+    }
+    
+    .progress-item.active {
+      border-left-color: var(--color-primary);
+      color: var(--color-primary);
+      font-weight: var(--font-weight-semibold);
+    }
+    
+    .progress-item.completed {
+      border-left-color: var(--color-success);
+      color: var(--color-success);
+    }
+    
+    .progress-item::before {
+      content: "○";
+      margin-right: var(--spacing-sm);
+    }
+    
+    .progress-item.completed::before {
+      content: "✓";
+    }
+    
+    .thanks-section {
+      display: none;
+      padding: var(--spacing-3xl);
+      text-align: center;
+      background: var(--color-background-alt);
+      border-radius: var(--border-radius-lg);
+      margin-top: var(--spacing-2xl);
+    }
+    
+    .thanks-section:target {
+      display: block;
+    }
+    
+    @media (max-width: 1023px) {
+      .assessment-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .progress-sidebar {
+        position: static;
+        order: -1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+        <span>MIND NOVA</span>
+      </a>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu">
+      <label for="menu-toggle" class="menu-icon" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="assessment.html" class="active">Assessment</a></li>
+          <li><a href="doctors.html">Doctors</a></li>
+          <li><a href="awareness.html">Awareness</a></li>
+          <li><a href="groups.html">Groups</a></li>
+          <li><a href="trips.html">Trips</a></li>
+          <li><a href="seminars.html">Seminars</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  
+  <main id="main-content">
+    
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li>Assessment</li>
+      </ol>
+    </nav>
+
+    
+    <section class="hero">
+      <div class="container">
+        <h1>Identify the Problem</h1>
+        <p>Take our guided assessment to better understand your mental health. Your responses are confidential and will help identify areas where you might benefit from support.</p>
+      </div>
+    </section>
+
+    
+    <section class="section">
+      <div class="assessment-container">
+       
+        <aside class="progress-sidebar">
+          <h3 style="margin-bottom: var(--spacing-md); font-size: var(--font-size-lg);">Progress</h3>
+          <div class="progress-item active">Mood</div>
+          <div class="progress-item">Sleep</div>
+          <div class="progress-item">Stress</div>
+          <div class="progress-item">Lifestyle</div>
+          <div class="progress-item">Support System</div>
+        </aside>
+
+       
+        <div class="assessment-form">
+          <form action="#thanks" method="get">
+         
+
+
+            <fieldset>
+              <legend>Mood & Emotional Well-being</legend>
+              <div class="form-group">
+                <label class="form-label">How would you describe your overall mood over the past two weeks?</label>
+                <div class="radio-group">
+                  <div class="radio-item">
+                    <input type="radio" id="mood-1" name="mood" value="excellent" required>
+                    <label for="mood-1">Generally positive and upbeat</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="mood-2" name="mood" value="good" required>
+                    <label for="mood-2">Mostly good with occasional low moments</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="mood-3" name="mood" value="neutral" required>
+                    <label for="mood-3">Neutral, neither particularly good nor bad</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="mood-4" name="mood" value="low" required>
+                    <label for="mood-4">Often feeling down or sad</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="mood-5" name="mood" value="very-low" required>
+                    <label for="mood-5">Frequently feeling very low or depressed</label>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+              <div class="form-group">
+                <label class="form-label">Have you experienced feelings of anxiety or worry?</label>
+                <div class="radio-group">
+                  <div class="radio-item">
+                    <input type="radio" id="anxiety-1" name="anxiety" value="never" required>
+                    <label for="anxiety-1">Rarely or never</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="anxiety-2" name="anxiety" value="sometimes" required>
+                    <label for="anxiety-2">Sometimes</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="anxiety-3" name="anxiety" value="often" required>
+                    <label for="anxiety-3">Often</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="anxiety-4" name="anxiety" value="very-often" required>
+                    <label for="anxiety-4">Very often, almost daily</label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+           
+
+
+
+
+
+
+            <fieldset>
+              <legend>Sleep Patterns</legend>
+              <div class="form-group">
+                <label class="form-label">How many hours of sleep do you typically get per night?</label>
+                <div class="radio-group">
+                  <div class="radio-item">
+                    <input type="radio" id="sleep-1" name="sleep-hours" value="less-5" required>
+                    <label for="sleep-1">Less than 5 hours</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="sleep-2" name="sleep-hours" value="5-6" required>
+                    <label for="sleep-2">5-6 hours</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="sleep-3" name="sleep-hours" value="7-8" required>
+                    <label for="sleep-3">7-8 hours</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="sleep-4" name="sleep-hours" value="more-8" required>
+                    <label for="sleep-4">More than 8 hours</label>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+              <div class="form-group">
+                <label class="form-label">How would you rate your sleep quality?</label>
+                <div class="radio-group">
+                  <div class="radio-item">
+                    <input type="radio" id="sleep-quality-1" name="sleep-quality" value="excellent" required>
+                    <label for="sleep-quality-1">Excellent - I wake up refreshed</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="sleep-quality-2" name="sleep-quality" value="good" required>
+                    <label for="sleep-quality-2">Good - Mostly restful</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="sleep-quality-3" name="sleep-quality" value="fair" required>
+                    <label for="sleep-quality-3">Fair - Sometimes restless</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="sleep-quality-4" name="sleep-quality" value="poor" required>
+                    <label for="sleep-quality-4">Poor - Often wake up tired</label>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+              <div class="form-group">
+                <label class="form-label">Do you experience any of the following? (Select all that apply)</label>
+                <div class="checkbox-group">
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="sleep-issue-1" name="sleep-issues" value="insomnia">
+                    <label for="sleep-issue-1">Difficulty falling asleep</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="sleep-issue-2" name="sleep-issues" value="waking">
+                    <label for="sleep-issue-2">Waking up frequently during the night</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="sleep-issue-3" name="sleep-issues" value="early">
+                    <label for="sleep-issue-3">Waking up too early</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="sleep-issue-4" name="sleep-issues" value="none">
+                    <label for="sleep-issue-4">None of the above</label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            
+
+
+
+
+
+
+
+
+            <fieldset>
+              <legend>Stress & Coping</legend>
+              <div class="form-group">
+                <label class="form-label">How would you rate your stress levels?</label>
+                <div class="radio-group">
+                  <div class="radio-item">
+                    <input type="radio" id="stress-1" name="stress" value="low" required>
+                    <label for="stress-1">Low - I feel calm and in control</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="stress-2" name="stress" value="moderate" required>
+                    <label for="stress-2">Moderate - Manageable stress</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="stress-3" name="stress" value="high" required>
+                    <label for="stress-3">High - Feeling overwhelmed</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="stress-4" name="stress" value="very-high" required>
+                    <label for="stress-4">Very high - Struggling to cope</label>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+              <div class="form-group">
+                <label class="form-label">What are your main sources of stress? (Select all that apply)</label>
+                <div class="checkbox-group">
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="stress-source-1" name="stress-sources" value="work">
+                    <label for="stress-source-1">Work or career</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="stress-source-2" name="stress-sources" value="relationships">
+                    <label for="stress-source-2">Relationships</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="stress-source-3" name="stress-sources" value="family">
+                    <label for="stress-source-3">Family responsibilities</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="stress-source-4" name="stress-sources" value="financial">
+                    <label for="stress-source-4">Financial concerns</label>
+                  </div>
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="stress-source-5" name="stress-sources" value="health">
+                    <label for="stress-source-5">Health issues</label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            
+
+
+
+            <fieldset>
+              <legend>Lifestyle & Daily Activities</legend>
+              <div class="form-group">
+                <label class="form-label">How often do you engage in physical exercise?</label>
+                <div class="radio-group">
+                  <div class="radio-item">
+                    <input type="radio" id="exercise-1" name="exercise" value="daily" required>
+                    <label for="exercise-1">Daily or almost daily</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="exercise-2" name="exercise" value="few-times" required>
+                    <label for="exercise-2">A few times per week</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="exercise-3" name="exercise" value="weekly" required>
+                    <label for="exercise-3">Once per week</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="exercise-4" name="exercise" value="rarely" required>
+                    <label for="exercise-4">Rarely or never</label>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+              <div class="form-group">
+                <label class="form-label">How would you describe your social interactions?</label>
+                <div class="radio-group">
+                  <div class="radio-item">
+                    <input type="radio" id="social-1" name="social" value="very-active" required>
+                    <label for="social-1">Very active - I enjoy socializing regularly</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="social-2" name="social" value="moderate" required>
+                    <label for="social-2">Moderate - I socialize when needed</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="social-3" name="social" value="limited" required>
+                    <label for="social-3">Limited - I prefer minimal social interaction</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="social-4" name="social" value="isolated" required>
+                    <label for="social-4">Isolated - I avoid social situations</label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+           
+
+
+
+
+            <fieldset>
+              <legend>Support System</legend>
+              <div class="form-group">
+                <label class="form-label">Do you have people you can talk to about your feelings?</label>
+                <div class="radio-group">
+                  <div class="radio-item">
+                    <input type="radio" id="support-1" name="support" value="yes-many" required>
+                    <label for="support-1">Yes, I have several people I can confide in</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="support-2" name="support" value="yes-few" required>
+                    <label for="support-2">Yes, I have a few trusted people</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="support-3" name="support" value="limited" required>
+                    <label for="support-3">Limited support - only one or two people</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="support-4" name="support" value="no" required>
+                    <label for="support-4">No, I don't have anyone to talk to</label>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+              <div class="form-group">
+                <label class="form-label">Have you ever sought professional mental health support?</label>
+                <div class="radio-group">
+                  <div class="radio-item">
+                    <input type="radio" id="professional-1" name="professional" value="yes-current" required>
+                    <label for="professional-1">Yes, I am currently seeing a professional</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="professional-2" name="professional" value="yes-past" required>
+                    <label for="professional-2">Yes, I have in the past</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="professional-3" name="professional" value="considered" required>
+                    <label for="professional-3">I've considered it but haven't yet</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" id="professional-4" name="professional" value="no" required>
+                    <label for="professional-4">No, I haven't considered it</label>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+              <div class="form-group">
+                <label class="form-label">Additional comments or concerns (optional)</label>
+                <textarea class="form-textarea" id="comments" name="comments" rows="4" placeholder="Please share any additional information you think might be relevant..."></textarea>
+                <p class="form-help">Your responses are confidential and will help us better understand your needs.</p>
+              </div>
+            </fieldset>
+
+            <div class="alert alert-info">
+              <strong>Note: This assessment is build by expert doctors.</strong> 
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">Submit Assessment</button>
+          </form>
+
+          
+
+
+
+
+          <div id="thanks" class="thanks-section">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width: 64px; height: 64px; color: var(--color-success); margin-bottom: var(--spacing-lg);">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            <h2>Thank You for Completing the Assessment</h2>
+            <p style="font-size: var(--font-size-lg); margin-bottom: var(--spacing-lg);">We've received your responses. A professional should review your results to provide proper guidance.</p>
+            <p style="margin-bottom: var(--spacing-xl);">Consider connecting with one of our verified doctors who can help you understand your results and provide personalized support.</p>
+            <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
+              <a href="doctors.html" class="btn btn-primary">Browse Doctors</a>
+              <a href="contact.html" class="btn btn-outline">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  
+
+
+
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>MIND NOVA</h3>
+        <p>Your trusted partner in mental health and wellness. We connect you with verified professionals and provide resources to support your journey.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="assessment.html">Assessment</a></li>
+          <li><a href="doctors.html">Doctors</a></li>
+          <li><a href="awareness.html">Awareness Hub</a></li>
+          <li><a href="groups.html">Groups & Sessions</a></li>
+          <li><a href="trips.html">Group Trips</a></li>
+          <li><a href="seminars.html">Seminars</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+
+      
+      <div class="footer-section">
+        <h3>Subscribe</h3>
+        <p>Get mental health tips and updates delivered to your inbox.</p>
+        <form class="footer-subscribe">
+          <label for="footer-email" class="sr-only">Email address for newsletter subscription</label>
+          <input type="email" id="footer-email" name="email" placeholder="Your email address" aria-label="Email address">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Email: support@mindnova.com<br>Phone: +91-88400-45634</p>
+        <p style="margin-top: var(--spacing-md); font-size: var(--font-size-sm);">
+          <strong>For emergencies:</strong><br>
+          Call on 022-2754-6669 emergency services immediately.
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p> <a href="#" style="color: rgba(255,255,255,0.6);">Privacy Policy</a> | <a href="#" style="color: rgba(255,255,255,0.6);">Terms of Service</a></p>
+    </div>
+  </footer>
+</body>
+</html>
+

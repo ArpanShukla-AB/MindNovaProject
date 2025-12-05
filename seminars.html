@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Join our offline seminars and workshops. Learn from expert speakers in person and connect with your local mental health community.">
+  <title>Offline Seminars - MIND NOVA</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    .event-card {
+      margin-bottom: var(--spacing-xl);
+    }
+    
+
+
+    .event-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: var(--spacing-md);
+      flex-wrap: wrap;
+      gap: var(--spacing-md);
+    }
+    
+
+
+
+    .event-date {
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      font-size: var(--font-size-lg);
+    }
+    
+
+
+
+    .event-location {
+      color: var(--color-text-light);
+    }
+    
+
+
+
+    .event-speakers {
+      margin-top: var(--spacing-md);
+    }
+    
+
+
+
+    .event-speakers h4 {
+      font-size: var(--font-size-base);
+      margin-bottom: var(--spacing-sm);
+    }
+    
+
+
+
+
+    .speaker-list {
+      list-style: none;
+      margin-left: 0;
+    }
+   
+    
+
+
+    .speaker-list li {
+      margin-bottom: var(--spacing-xs);
+      color: var(--color-text-light);
+    }
+    
+
+
+
+    .seats-left {
+      display: inline-block;
+      padding: var(--spacing-xs) var(--spacing-sm);
+      background: var(--color-warning);
+      color: white;
+      border-radius: var(--border-radius);
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-semibold);
+      margin-left: var(--spacing-sm);
+    }
+    
+
+
+
+    .venue-map {
+      width: 100%;
+      height: 300px;
+      background: var(--color-background-subtle);
+      border-radius: var(--border-radius);
+      margin-top: var(--spacing-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-text-light);
+    }
+    
+
+
+
+    .reserve-section {
+      display: none;
+      padding: var(--spacing-xl);
+      background: var(--color-background-alt);
+      border-radius: var(--border-radius-lg);
+      margin-top: var(--spacing-xl);
+    }
+    
+
+
+
+
+    .reserve-section:target {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  
+ 
+
+
+
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+        <span>MIND NOVA</span>
+      </a>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu">
+      <label for="menu-toggle" class="menu-icon" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="assessment.html">Assessment</a></li>
+          <li><a href="doctors.html">Doctors</a></li>
+          <li><a href="awareness.html">Awareness</a></li>
+          <li><a href="groups.html">Groups</a></li>
+          <li><a href="trips.html">Trips</a></li>
+          <li><a href="seminars.html" class="active">Seminars</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  
+  <main id="main-content">
+   
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li>Offline Seminars</li>
+      </ol>
+    </nav>
+
+    
+
+
+
+    <section class="hero">
+      <div class="container">
+        <h1>Offline Seminars & Workshops</h1>
+        <p>Join us for in-person seminars and workshops led by mental health experts. Connect with your local community and learn in a supportive environment.</p>
+      </div>
+    </section>
+
+   
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Upcoming Events</h2>
+
+        
+
+
+        <div class="card event-card">
+          <div class="event-header">
+            <div>
+              <div class="event-date">March 25, 2024 | 10:00 AM - 2:00 PM</div>
+              <div class="event-location"><strong>Mumbai</strong> - Taj Lands End, Bandra</div>
+            </div>
+            <div>
+              <span class="seats-left">8 seats left</span>
+            </div>
+          </div>
+          <h3 class="card-title">Understanding Anxiety: A Practical Workshop</h3>
+          <p class="card-body">Join us for an interactive workshop on understanding and managing anxiety. Learn practical techniques, participate in group exercises, and connect with others who share similar experiences.</p>
+          <div class="event-speakers">
+            <h4>Speakers:</h4>
+            <ul class="speaker-list">
+              <li>Dr. Priya Sharma - Clinical Psychologist</li>
+              <li>Dr. Meera Patel - Trauma Specialist</li>
+            </ul>
+          </div>
+          <div style="margin-top: var(--spacing-lg);">
+            <a href="#reserve" class="btn btn-primary">Reserve Seat</a>
+          </div>
+          <div class="alert alert-info" style="margin-top: var(--spacing-md);">
+            <strong>Accessibility:</strong> The venue is wheelchair accessible. Sign language interpretation available upon request (please contact us at least one week in advance).
+          </div>
+        </div>
+
+        
+
+
+        <div class="card event-card">
+          <div class="event-header">
+            <div>
+              <div class="event-date">April 5, 2024 | 2:00 PM - 5:00 PM</div>
+              <div class="event-location"><strong>Delhi</strong> - India Habitat Centre, Lodhi Road</div>
+            </div>
+            <div>
+              <span class="seats-left">15 seats left</span>
+            </div>
+          </div>
+          <h3 class="card-title">Depression & Mood Disorders: Breaking the Stigma</h3>
+          <p class="card-body">An informative seminar on depression and mood disorders, covering symptoms, treatment options, and how to support loved ones. Includes Q&A session with expert panel.</p>
+          <div class="event-speakers">
+            <h4>Speakers:</h4>
+            <ul class="speaker-list">
+              <li>Dr. Rajesh Kumar - Psychiatrist</li>
+              <li>Dr. Vikram Singh - Child & Adolescent Psychologist</li>
+            </ul>
+          </div>
+          <div style="margin-top: var(--spacing-lg);">
+            <a href="#reserve" class="btn btn-primary">Reserve Seat</a>
+          </div>
+          <div class="alert alert-info" style="margin-top: var(--spacing-md);">
+            <strong>Accessibility:</strong> The venue has wheelchair access and accessible parking. Audio loop system available for hearing assistance.
+          </div>
+        </div>
+
+      
+
+
+        <div class="card event-card">
+          <div class="event-header">
+            <div>
+              <div class="event-date">April 15, 2024 | 10:00 AM - 1:00 PM</div>
+              <div class="event-location"><strong>Bangalore</strong> - The Leela Palace, Old Airport Road</div>
+            </div>
+            <div>
+              <span class="seats-left">12 seats left</span>
+            </div>
+          </div>
+          <h3 class="card-title">Stress Management for Working Professionals</h3>
+          <p class="card-body">Learn effective stress management techniques tailored for working professionals. Discover work-life balance strategies, time management tips, and mindfulness practices for the workplace.</p>
+          <div class="event-speakers">
+            <h4>Speakers:</h4>
+            <ul class="speaker-list">
+              <li>Dr. Ananya Mehta - Counseling Psychologist</li>
+              <li>Dr. Rohan Malhotra - Sleep & Stress Specialist</li>
+            </ul>
+          </div>
+          <div style="margin-top: var(--spacing-lg);">
+            <a href="#reserve" class="btn btn-primary">Reserve Seat</a>
+          </div>
+          <div class="alert alert-info" style="margin-top: var(--spacing-md);">
+            <strong>Accessibility:</strong> Wheelchair accessible venue with accessible restrooms. Quiet room available for breaks.
+          </div>
+        </div>
+
+       
+
+
+
+        <div class="card event-card">
+          <div class="event-header">
+            <div>
+              <div class="event-date">May 1, 2024 | 11:00 AM - 3:00 PM</div>
+              <div class="event-location"><strong>Pune</strong> - JW Marriott Hotel, Senapati Bapat Road</div>
+            </div>
+            <div>
+              <span class="seats-left">20 seats left</span>
+            </div>
+          </div>
+          <h3 class="card-title">Family Therapy & Relationship Counseling Workshop</h3>
+          <p class="card-body">A comprehensive workshop on improving family communication and relationships. Learn techniques for conflict resolution, effective communication, and building stronger family bonds.</p>
+          <div class="event-speakers">
+            <h4>Speakers:</h4>
+            <ul class="speaker-list">
+              <li>Dr. Sunita Desai - Family Therapist</li>
+              <li>Dr. Priya Sharma - Relationship Counselor</li>
+            </ul>
+          </div>
+          <div style="margin-top: var(--spacing-lg);">
+            <a href="#reserve" class="btn btn-primary">Reserve Seat</a>
+          </div>
+          <div class="alert alert-info" style="margin-top: var(--spacing-md);">
+            <strong>Accessibility:</strong> Fully accessible venue. Childcare services available upon request (advance notice required).
+          </div>
+        </div>
+
+       
+
+
+
+        <div class="card event-card">
+          <div class="event-header">
+            <div>
+              <div class="event-date">May 20, 2024 | 9:00 AM - 12:00 PM</div>
+              <div class="event-location"><strong>Hyderabad</strong> - Taj Krishna, Banjara Hills</div>
+            </div>
+            <div>
+              <span class="seats-left">5 seats left</span>
+            </div>
+          </div>
+          <h3 class="card-title">Addiction Recovery & Support: A Community Discussion</h3>
+          <p class="card-body">An important seminar on addiction, recovery, and support systems. Hear from experts and individuals in recovery. Learn about available resources and how to support someone on their recovery journey.</p>
+          <div class="event-speakers">
+            <h4>Speakers:</h4>
+            <ul class="speaker-list">
+              <li>Dr. Arjun Reddy - Addiction Medicine Specialist</li>
+              <li>Recovery Community Representatives</li>
+            </ul>
+          </div>
+          <div style="margin-top: var(--spacing-lg);">
+            <a href="#reserve" class="btn btn-primary">Reserve Seat</a>
+          </div>
+          <div class="alert alert-info" style="margin-top: var(--spacing-md);">
+            <strong>Accessibility:</strong> Accessible venue with support for various needs. Confidential spaces available for private conversations.
+          </div>
+        </div>
+
+        
+
+
+
+
+        <div id="reserve" class="reserve-section">
+          <h2>Reserve Your Seat</h2>
+          <p style="margin-bottom: var(--spacing-lg);">Fill out the form below to reserve your seat at one of our seminars. You'll receive a confirmation email with event details and venue information.</p>
+          <form action="#" method="get">
+            <div class="form-group">
+              <label for="seminar-name" class="form-label">Full Name <span class="required">*</span></label>
+              <input type="text" id="seminar-name" name="name" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label for="seminar-email" class="form-label">Email Address <span class="required">*</span></label>
+              <input type="email" id="seminar-email" name="email" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label for="seminar-phone" class="form-label">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="seminar-phone" name="phone" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label for="seminar-event" class="form-label">Select Event <span class="required">*</span></label>
+              <select id="seminar-event" name="event" class="form-select" required>
+                <option value="">Choose an event</option>
+                <option value="mumbai-anxiety">Understanding Anxiety - Mumbai (March 25)</option>
+                <option value="delhi-depression">Depression & Mood Disorders - Delhi (April 5)</option>
+                <option value="bangalore-stress">Stress Management - Bangalore (April 15)</option>
+                <option value="pune-family">Family Therapy Workshop - Pune (May 1)</option>
+                <option value="hyderabad-addiction">Addiction Recovery - Hyderabad (May 20)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="seminar-accessibility" class="form-label">Accessibility Requirements</label>
+              <textarea id="seminar-accessibility" name="accessibility" class="form-textarea" rows="3" placeholder="Please let us know if you have any accessibility requirements or special needs..."></textarea>
+              <p class="form-help">We strive to make our events accessible to everyone. Please share any requirements so we can accommodate you.</p>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Reserve Seat</button>
+          </form>
+          <p style="margin-top: var(--spacing-lg); font-size: var(--font-size-sm); color: var(--color-text-light);">
+            <strong>Note:</strong> Seats are limited and reservations are subject to availability. You'll receive a confirmation email within 24 hours. Some events may have a registration fee (details will be provided in the confirmation email).
+          </p>
+        </div>
+
+        
+
+
+
+
+
+        <div class="card" style="margin-top: var(--spacing-2xl);">
+          <h2>Event Venues</h2>
+          <p>Our seminars are held at accessible, well-equipped venues in major cities. Detailed directions and parking information will be provided in your confirmation email.</p>
+          <div class="venue-map">
+            <p>Map placeholder - Venue locations will be marked here</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+
+
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>MIND NOVA</h3>
+        <p>Your trusted partner in mental health and wellness. We connect you with verified professionals and provide resources to support your journey.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="assessment.html">Assessment</a></li>
+          <li><a href="doctors.html">Doctors</a></li>
+          <li><a href="awareness.html">Awareness Hub</a></li>
+          <li><a href="groups.html">Groups & Sessions</a></li>
+          <li><a href="trips.html">Group Trips</a></li>
+          <li><a href="seminars.html">Seminars</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+
+
+
+      <div class="footer-section">
+        <h3>Subscribe</h3>
+        <p>Get mental health tips and updates delivered to your inbox.</p>
+        <form class="footer-subscribe">
+          <label for="footer-email" class="sr-only">Email address for newsletter subscription</label>
+          <input type="email" id="footer-email" name="email" placeholder="Your email address" aria-label="Email address">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+
+
+      
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Email: support@mindnova.com<br>Phone: +91-88400-45634</p>
+        <p style="margin-top: var(--spacing-md); font-size: var(--font-size-sm);">
+          <strong>For emergencies:</strong><br>
+          Call your local helpline or emergency services immediately.
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><a href="#" style="color: rgba(255,255,255,0.6);">Privacy Policy</a> | <a href="#" style="color: rgba(255,255,255,0.6);">Terms of Service</a></p>
+    </div>
+  </footer>
+</body>
+</html>
+

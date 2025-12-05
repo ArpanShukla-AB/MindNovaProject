@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Access educational videos and articles about mental health from verified experts.">
+  <title>Awareness Hub - MIND NOVA</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+    .featured-row {
+      margin-bottom: var(--spacing-3xl);
+    }
+    
+    .video-card,
+    .article-card {
+      position: relative;
+    }
+    
+    .video-thumbnail {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: var(--color-background-subtle);
+      border-radius: var(--border-radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .video-thumbnail iframe {
+      width: 100%;
+      height: 100%;
+      border-radius: var(--border-radius);
+    }
+    
+    .read-time {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-light);
+      margin-top: var(--spacing-sm);
+    }
+    
+    .article-excerpt {
+      color: var(--color-text-light);
+      margin: var(--spacing-sm) 0;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  
+ 
+
+
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+        <span>MIND NOVA</span>
+      </a>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu">
+      <label for="menu-toggle" class="menu-icon" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="assessment.html">Assessment</a></li>
+          <li><a href="doctors.html">Doctors</a></li>
+          <li><a href="awareness.html" class="active">Awareness</a></li>
+          <li><a href="groups.html">Groups</a></li>
+          <li><a href="trips.html">Trips</a></li>
+          <li><a href="seminars.html">Seminars</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  
+  
+  <main id="main-content">
+    
+
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li>Awareness Hub</li>
+      </ol>
+    </nav>
+
+   
+
+
+    <section class="hero">
+      <div class="container">
+        <h1>Awareness Hub</h1>
+        <p>Learn about mental health from verified experts. Access educational videos, articles, and resources to support your wellness journey.</p>
+      </div>
+    </section>
+
+   
+
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Start with These</h2>
+        <div class="grid grid-3 featured-row">
+          <div class="card video-card">
+            <div class="video-thumbnail">
+              <iframe src="https://www.youtube.com/embed/U9ml2mmfMfM?si=Kv9SNVemdswXR5DP" title="Understanding Anxiety" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h3 class="card-title">Understanding Anxiety: A Comprehensive Guide</h3>
+            <p class="text-muted"><strong>EMMA MCADAM</strong></p>
+            <p class="read-time">15 min</p>
+          </div>
+          <div class="card article-card">
+            <h3 class="card-title">10 Signs You Might Need Mental Health Support</h3>
+            <p class="article-excerpt">Recognizing when to seek help is an important step in your mental health journey. Learn about common signs that indicate professional support might be beneficial.</p>
+            <p class="text-muted">By Timely Care</p>
+            <p class="read-time">5 min read</p>
+            <div style="margin-top: var(--spacing-md);">
+              <a href="https://timelycare.com/blog/10-signs-a-student-needs-mental-health-support-and-how-to-take-action/" class="btn btn-primary btn-sm">Read Article</a>
+            </div>
+          </div>
+          <div class="card video-card">
+            <div class="video-thumbnail">
+              <iframe src="https://www.youtube.com/embed/7-1Y6IbAxdM?si=elw_xvnWnkdIgRDp" title="Mindfulness Techniques" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <h3 class="card-title">Mindfulness Techniques for Daily Life</h3>
+            <p class="text-muted"><strong>PsychHub</strong></p>
+            <p class="read-time">5 min</p>
+          </div>
+        </div>
+
+       
+
+
+
+        <div class="tabs">
+          <input type="radio" id="tab-videos" name="tabs" class="tab-input" checked>
+          <input type="radio" id="tab-articles" name="tabs" class="tab-input">
+          
+          <div class="tab-list">
+            <label for="tab-videos" class="tab-label">Videos</label>
+            <label for="tab-articles" class="tab-label">Articles</label>
+          </div>
+
+        
+
+
+
+          <div class="tab-panel">
+            <div class="grid grid-3">
+              <div class="card video-card">
+                <div class="video-thumbnail">
+                  <iframe src="https://www.youtube.com/embed/8Su5VtKeXU8?si=eXDYWJaVPMl1yCFD" title="Coping with Depression" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h3 class="card-title">Coping with Depression: Practical Strategies</h3>
+                <p class="text-muted"><strong>The School Of Life</strong></p>
+                <p class="read-time">9 min</p>
+              </div>
+
+
+
+
+
+              <div class="card video-card">
+                <div class="video-thumbnail">
+                  <iframe src="https://www.youtube.com/embed/qUz93CyNIz0?si=c2TzJCXPrzn_844m" title="Stress Management" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h3 class="card-title">Effective Stress Management Techniques</h3>
+                <p class="text-muted"><strong>HumberLab</strong></p>
+                <p class="read-time">32 min</p>
+              </div>
+
+
+
+
+              <div class="card video-card">
+                <div class="video-thumbnail">
+                  <iframe src="https://www.youtube.com/embed/AjxDxrjO_Xw?si=9IkWZcBHw7pExlBH" title="Teen Mental Health" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h3 class="card-title">Supporting Teen Mental Health</h3>
+                <p class="text-muted"><strong>PsychHub</strong></p>
+                <p class="read-time">4 min</p>
+              </div>
+
+
+
+
+              <div class="card video-card">
+                <div class="video-thumbnail">
+                  <iframe src="https://www.youtube.com/embed/xIf4uJ94r3o?si=E5nM1YSJb9TxGp4p" title="Trauma Recovery" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h3 class="card-title">Understanding Trauma and Recovery</h3>
+                <p class="text-muted">Tim Fletcher</p>
+                <p class="read-time">45 min</p>
+              </div>
+
+
+
+
+              <div class="card video-card">
+                <div class="video-thumbnail">
+                  <iframe src="https://www.youtube.com/embed/Quw6URDE_Oo?si=Cj_7G-Sj282J_Nbo" title="Sleep Hygiene" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h3 class="card-title">Improving Sleep Hygiene</h3>
+                <p class="text-muted"><strong>Lauren</strong></p>
+                <p class="read-time">4 min</p>
+              </div>
+
+
+
+
+
+              <div class="card video-card">
+                <div class="video-thumbnail">
+                  <iframe src="https://www.youtube.com/embed/80QMtngXHLQ?si=k4X2e_tTHKbMywsm" title="Family Therapy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <h3 class="card-title">Family Therapy: Improving Communication</h3>
+                <p class="text-muted"><strong>Meyleen Velasqaz</strong></p>
+                <p class="read-time">9 min</p>
+              </div>
+            </div>
+          </div>
+
+         
+
+
+
+          <div class="tab-panel">
+            <div class="grid grid-2">
+              <article class="card article-card">
+                <h3 class="card-title">Understanding Different Types of Anxiety Disorders</h3>
+                <p class="article-excerpt">Anxiety disorders come in many forms. Learn about generalized anxiety, panic disorder, social anxiety, and how to recognize the differences.</p>
+                <p class="text-muted">By Psychiatry org</p>
+                <p class="read-time">8 min read</p>
+                <div style="margin-top: var(--spacing-md);">
+                  <a href="https://www.psychiatry.org/patients-families/anxiety-disorders/what-are-anxiety-disorders" class="btn btn-primary btn-sm">Read Article</a>
+                </div>
+              </article>
+
+
+
+
+
+              <article class="card article-card">
+                <h3 class="card-title">The Importance of Self-Care in Mental Health</h3>
+                <p class="article-excerpt">Self-care is not selfish—it's essential. Discover practical self-care strategies that can improve your mental well-being and help you maintain balance.</p>
+                <p class="text-muted">By BeThe1To</p>
+                <p class="read-time">6 min read</p>
+                <div style="margin-top: var(--spacing-md);">
+                  <a href="https://bethe1to.com/the-importance-of-self-care/" class="btn btn-primary btn-sm">Read Article</a>
+                </div>
+              </article>
+
+              <article class="card article-card">
+                <h3 class="card-title">Breaking the Stigma: Talking About Mental Health</h3>
+                <p class="article-excerpt">Mental health stigma prevents many from seeking help. Learn how to have open conversations about mental health and support those around you.</p>
+                <p class="text-muted">By World Health Organization</p>
+                <p class="read-time">7 min read</p>
+                <div style="margin-top: var(--spacing-md);">
+                  <a href="https://www.who.int/news-room/fact-sheets/detail/mental-health-strengthening-our-response" class="btn btn-primary btn-sm">Read Article</a>
+                </div>
+              </article>
+
+
+
+
+              <article class="card article-card">
+                <h3 class="card-title">CBT: How Cognitive Behavioral Therapy Works</h3>
+                <p class="article-excerpt">Cognitive Behavioral Therapy is one of the most effective treatments for various mental health conditions. Understand how CBT can help you change negative thought patterns.</p>
+                <p class="text-muted">By Mayo Clinic</p>
+                <p class="read-time">10 min read</p>
+                <div style="margin-top: var(--spacing-md);">
+                  <a href="https://www.mayoclinic.org/tests-procedures/cognitive-behavioral-therapy/about/pac-20384610" class="btn btn-primary btn-sm">Read Article</a>
+                </div>
+              </article>
+
+
+
+
+              <article class="card article-card">
+                <h3 class="card-title">Parenting and Child Mental Health</h3>
+                <p class="article-excerpt">Supporting your child's mental health is crucial. Learn about signs to watch for, when to seek help, and how to create a supportive environment at home.</p>
+                <p class="text-muted">By National Institute Of Health</p>
+                <p class="read-time">9 min read</p>
+                <div style="margin-top: var(--spacing-md);">
+                  <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC5694794/" class="btn btn-primary btn-sm">Read Article</a>
+                </div>
+              </article>
+
+
+
+
+              <article class="card article-card">
+                <h3 class="card-title">Managing Work-Related Stress and Burnout</h3>
+                <p class="article-excerpt">Work stress can take a toll on your mental health. Discover strategies to manage workplace stress, prevent burnout, and maintain work-life balance.</p>
+                <p class="text-muted">By Mayo Clinic</p>
+                <p class="read-time">7 min read</p>
+                <div style="margin-top: var(--spacing-md);">
+                  <a href="https://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/burnout/art-20046642" class="btn btn-primary btn-sm">Read Article</a>
+                </div>
+              </article>
+
+
+
+
+
+              <article class="card article-card">
+                <h3 class="card-title">Understanding PTSD and Trauma Responses</h3>
+                <p class="article-excerpt">Post-traumatic stress disorder affects many people. Learn about trauma responses, symptoms of PTSD, and available treatment options.</p>
+                <p class="text-muted">By Mayo Clinic</p>
+                <p class="read-time">11 min read</p>
+                <div style="margin-top: var(--spacing-md);">
+                  <a href="https://www.mayoclinic.org/diseases-conditions/post-traumatic-stress-disorder/symptoms-causes/syc-20355967" class="btn btn-primary btn-sm">Read Article</a>
+                </div>
+              </article>
+
+
+
+
+
+              <article class="card article-card">
+                <h3 class="card-title">Building Resilience: Bouncing Back from Adversity</h3>
+                <p class="article-excerpt">Resilience is the ability to adapt and recover from challenges. Learn how to build resilience and develop coping skills that help you navigate life's difficulties.</p>
+                <p class="text-muted">By Positive Pschyclogy</p>
+                <p class="read-time">8 min read</p>
+                <div style="margin-top: var(--spacing-md);">
+                  <a href="https://positivepsychology.com/what-is-resilience/" class="btn btn-primary btn-sm">Read Article</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  
+
+
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>MIND NOVA</h3>
+        <p>Your trusted partner in mental health and wellness. We connect you with verified professionals and provide resources to support your journey.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="assessment.html">Assessment</a></li>
+          <li><a href="doctors.html">Doctors</a></li>
+          <li><a href="awareness.html">Awareness Hub</a></li>
+          <li><a href="groups.html">Groups & Sessions</a></li>
+          <li><a href="trips.html">Group Trips</a></li>
+          <li><a href="seminars.html">Seminars</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Subscribe</h3>
+        <p>Get mental health tips and updates delivered to your inbox.</p>
+        <form class="footer-subscribe">
+          <label for="footer-email" class="sr-only">Email address for newsletter subscription</label>
+          <input type="email" id="footer-email" name="email" placeholder="Your email address" aria-label="Email address">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Email: support@mindnova.com<br>Phone: +91-88400-45634</p>
+        <p style="margin-top: var(--spacing-md); font-size: var(--font-size-sm);">
+          <strong>For emergencies:</strong><br>
+          Call on 022-2754-6669emergency services immediately.
+        </p>
+      </div>
+      
+    </div>
+    <div class="footer-bottom">
+      <p><a href="#" style="color: rgba(255,255,255,0.6);">Privacy Policy</a> | <a href="#" style="color: rgba(255,255,255,0.6);">Terms of Service</a></p>
+    </div>
+  </footer>
+</body>
+</html>
+

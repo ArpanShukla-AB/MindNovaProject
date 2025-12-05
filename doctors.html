@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse our directory of verified mental health professionals and connect with the right doctor for you.">
+  <title>Connect with Doctors - MIND NOVA</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <style>
+
+
+
+
+
+    .filter-bar {
+      background: var(--color-background-alt);
+      padding: var(--spacing-lg);
+      border-radius: var(--border-radius-lg);
+      margin-bottom: var(--spacing-xl);
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-md);
+      align-items: center;
+    }
+    
+
+
+
+
+    .filter-group {
+      flex: 1;
+      min-width: 200px;
+    }
+    
+
+
+
+
+    .filter-group label {
+      display: block;
+      font-weight: var(--font-weight-medium);
+      margin-bottom: var(--spacing-sm);
+      font-size: var(--font-size-sm);
+    }
+   
+    
+
+
+    .filter-select {
+      width: 100%;
+      padding: var(--spacing-sm) var(--spacing-md);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius);
+      background: var(--color-background);
+    }
+   
+    
+
+
+
+    .filter-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+    }
+  
+    
+
+
+
+    .filter-chip {
+      padding: var(--spacing-xs) var(--spacing-md);
+      background: var(--color-background);
+      border: 1px solid var(--color-border);
+      border-radius: 20px;
+      font-size: var(--font-size-sm);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+  
+    
+
+
+
+    .filter-chip:hover {
+      background: var(--color-primary);
+      color: white;
+      border-color: var(--color-primary);
+    }
+   
+    
+
+
+
+    .doctor-card {
+      position: relative;
+    }
+  
+    
+
+
+
+    .doctor-photo {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: var(--border-radius);
+      margin-bottom: var(--spacing-md);
+      background: var(--color-background-subtle);
+    }
+  
+    
+
+
+
+
+    .doctor-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-xs);
+      margin-top: var(--spacing-md);
+    }
+  
+    
+
+
+
+
+    .doctor-actions {
+      display: flex;
+      gap: var(--spacing-sm);
+      margin-top: var(--spacing-md);
+    }
+   
+    
+
+
+
+    .doctor-actions .btn {
+      flex: 1;
+    }
+   
+    
+
+
+
+    .modal {
+      display: none;
+    }
+  
+    
+
+
+
+
+    .modal:target {
+      display: flex;
+    }
+  
+    
+
+
+
+    .doctor-detail-grid {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: var(--spacing-xl);
+      margin-top: var(--spacing-lg);
+    }
+  
+    
+
+
+
+    @media (max-width: 767px) {
+      .doctor-detail-grid {
+        grid-template-columns: 1fr;
+      }
+   
+      
+
+
+
+      .filter-bar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  
+  
+
+
+
+
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+
+        <span>MIND NOVA</span>
+
+
+
+
+      </a>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Toggle navigation menu">
+      <label for="menu-toggle" class="menu-icon" aria-label="Open navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      <nav>
+
+
+
+
+
+
+
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="assessment.html">Assessment</a></li>
+          <li><a href="doctors.html" class="active">Doctors</a></li>
+          <li><a href="awareness.html">Awareness</a></li>
+          <li><a href="groups.html">Groups</a></li>
+          <li><a href="trips.html">Trips</a></li>
+          <li><a href="seminars.html">Seminars</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+
+  
+  <main id="main-content">
+    
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="index.html">Home</a></li>
+        <li>Doctors</li>
+      </ol>
+    </nav>
+
+ 
+    
+
+
+    <section class="hero">
+      <div class="container">
+        <h1>Connect with Verified Doctors</h1>
+        <p>Browse our directory of certified mental health professionals. Each doctor is carefully vetted and specializes in different areas of mental wellness.</p>
+      </div>
+    </section>
+
+   
+
+
+    <section class="section">
+      <div class="container">
+        <div class="filter-bar">
+          <div class="filter-group">
+            <label for="specialty-filter">Specialty</label>
+            <select id="specialty-filter" class="filter-select" disabled>
+              <option>All Specialties</option>
+              <option>Psychiatry</option>
+              <option>Clinical Psychology</option>
+              <option>Counseling</option>
+              <option>Child Psychology</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="price-filter">Price Range</label>
+            <div style="position: relative;">
+              <input type="range" id="price-filter" min="0" max="5000" value="2500" class="filter-select" disabled style="padding: 0;">
+              <div style="display: flex; justify-content: space-between; font-size: var(--font-size-sm); margin-top: var(--spacing-xs);">
+                <span>₹500</span>
+                <span>₹5000+</span>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="filter-group">
+            <label>Location</label>
+            <div class="filter-chips">
+              <span class="filter-chip">Mumbai</span>
+              <span class="filter-chip">Delhi</span>
+              <span class="filter-chip">Bangalore</span>
+              <span class="filter-chip">Online</span>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="banner">
+          <strong>Note:</strong> Consultations are paid services. Prices vary by doctor and consultation type. Please check individual profiles for pricing details.
+        </div>
+
+       
+        <div class="grid grid-3">
+          
+
+          <div class="card doctor-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='%236b7280'%3EDr. Priya%3C/text%3E%3C/svg%3E" alt="Dr. Priya Sharma" class="doctor-photo">
+            <h3 class="card-title">Dr. Priya Sharma</h3>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Specialty:</strong> Clinical Psychology</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Experience:</strong> 12 years</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Languages:</strong> Hindi, English, Marathi</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Location:</strong> Mumbai, Online</p>
+            <p class="card-body" style="margin-bottom: var(--spacing-md);">Specializes in anxiety disorders, depression, and relationship counseling. Uses evidence-based therapies including CBT and mindfulness techniques.</p>
+            <div class="doctor-tags">
+              <span class="badge badge-primary">Anxiety</span>
+              <span class="badge badge-primary">Depression</span>
+              <span class="badge badge-primary">CBT</span>
+            </div>
+            <div class="doctor-actions">
+              <a href="#doctor-1" class="btn btn-outline btn-sm">View Profile</a>
+              <a href="pricing.html" class="btn btn-primary btn-sm">Book Consultation</a>
+            </div>
+          </div>
+
+          
+
+
+
+          <div class="card doctor-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='%236b7280'%3EDr. Rajesh%3C/text%3E%3C/svg%3E" alt="Dr. Rajesh Kumar" class="doctor-photo">
+            <h3 class="card-title">Dr. Rajesh Kumar</h3>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Specialty:</strong> Psychiatry</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Experience:</strong> 15 years</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Languages:</strong> Hindi, English, Punjabi</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Location:</strong> Delhi, Online</p>
+            <p class="card-body" style="margin-bottom: var(--spacing-md);">Expert in mood disorders, bipolar disorder, and psychiatric medication management. Provides comprehensive psychiatric evaluations and treatment.</p>
+            <div class="doctor-tags">
+              <span class="badge badge-primary">Mood Disorders</span>
+              <span class="badge badge-primary">Bipolar</span>
+              <span class="badge badge-primary">Medication</span>
+            </div>
+            <div class="doctor-actions">
+              <a href="#doctor-2" class="btn btn-outline btn-sm">View Profile</a>
+              <a href="pricing.html" class="btn btn-primary btn-sm">Book Consultation</a>
+            </div>
+          </div>
+
+          
+
+
+
+
+          <div class="card doctor-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='%236b7280'%3EDr. Ananya%3C/text%3E%3C/svg%3E" alt="Dr. Ananya Mehta" class="doctor-photo">
+            <h3 class="card-title">Dr. Ananya Mehta</h3>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Specialty:</strong> Counseling Psychology</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Experience:</strong> 8 years</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Languages:</strong> English, Kannada, Hindi</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Location:</strong> Bangalore, Online</p>
+            <p class="card-body" style="margin-bottom: var(--spacing-md);">Focuses on stress management, work-life balance, and personal growth. Helps clients develop coping strategies and build resilience.</p>
+            <div class="doctor-tags">
+              <span class="badge badge-primary">Stress</span>
+              <span class="badge badge-primary">Work-Life</span>
+              <span class="badge badge-primary">Growth</span>
+            </div>
+            <div class="doctor-actions">
+              <a href="#doctor-3" class="btn btn-outline btn-sm">View Profile</a>
+              <a href="pricing.html" class="btn btn-primary btn-sm">Book Consultation</a>
+            </div>
+          </div>
+
+          
+
+
+
+
+          <div class="card doctor-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='%236b7280'%3EDr. Vikram%3C/text%3E%3C/svg%3E" alt="Dr. Vikram Singh" class="doctor-photo">
+            <h3 class="card-title">Dr. Vikram Singh</h3>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Specialty:</strong> Child & Adolescent Psychology</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Experience:</strong> 10 years</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Languages:</strong> Hindi, English</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Location:</strong> Delhi, Online</p>
+            <p class="card-body" style="margin-bottom: var(--spacing-md);">Specializes in working with children and teenagers. Experienced in addressing behavioral issues, ADHD, and adolescent mental health challenges.</p>
+            <div class="doctor-tags">
+              <span class="badge badge-primary">Teen</span>
+              <span class="badge badge-primary">ADHD</span>
+              <span class="badge badge-primary">Behavior</span>
+            </div>
+            <div class="doctor-actions">
+              <a href="#doctor-4" class="btn btn-outline btn-sm">View Profile</a>
+              <a href="pricing.html" class="btn btn-primary btn-sm">Book Consultation</a>
+            </div>
+          </div>
+
+         
+
+
+
+
+          <div class="card doctor-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='%236b7280'%3EDr. Meera%3C/text%3E%3C/svg%3E" alt="Dr. Meera Patel" class="doctor-photo">
+            <h3 class="card-title">Dr. Meera Patel</h3>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Specialty:</strong> Clinical Psychology</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Experience:</strong> 14 years</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Languages:</strong> Gujarati, Hindi, English</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Location:</strong> Mumbai, Online</p>
+            <p class="card-body" style="margin-bottom: var(--spacing-md);">Expert in trauma therapy, PTSD, and EMDR. Provides compassionate care for individuals dealing with past trauma and its impact on present life.</p>
+            <div class="doctor-tags">
+              <span class="badge badge-primary">Trauma</span>
+              <span class="badge badge-primary">PTSD</span>
+              <span class="badge badge-primary">EMDR</span>
+            </div>
+            <div class="doctor-actions">
+              <a href="#doctor-5" class="btn btn-outline btn-sm">View Profile</a>
+              <a href="pricing.html" class="btn btn-primary btn-sm">Book Consultation</a>
+            </div>
+          </div>
+
+          
+
+
+
+
+          <div class="card doctor-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='%236b7280'%3EDr. Arjun%3C/text%3E%3C/svg%3E" alt="Dr. Arjun Reddy" class="doctor-photo">
+            <h3 class="card-title">Dr. Arjun Reddy</h3>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Specialty:</strong> Psychiatry</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Experience:</strong> 11 years</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Languages:</strong> Telugu, English, Hindi</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Location:</strong> Hyderabad, Online</p>
+            <p class="card-body" style="margin-bottom: var(--spacing-md);">Specializes in addiction medicine, substance abuse treatment, and dual diagnosis. Provides comprehensive support for recovery journeys.</p>
+            <div class="doctor-tags">
+              <span class="badge badge-primary">Addiction</span>
+              <span class="badge badge-primary">Recovery</span>
+              <span class="badge badge-primary">Substance Abuse</span>
+            </div>
+            <div class="doctor-actions">
+              <a href="#doctor-6" class="btn btn-outline btn-sm">View Profile</a>
+              <a href="pricing.html" class="btn btn-primary btn-sm">Book Consultation</a>
+            </div>
+          </div>
+
+          
+
+
+
+
+
+          <div class="card doctor-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='%236b7280'%3EDr. Sunita%3C/text%3E%3C/svg%3E" alt="Dr. Sunita Desai" class="doctor-photo">
+            <h3 class="card-title">Dr. Sunita Desai</h3>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Specialty:</strong> Counseling Psychology</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Experience:</strong> 9 years</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Languages:</strong> Marathi, Hindi, English</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Location:</strong> Pune, Online</p>
+            <p class="card-body" style="margin-bottom: var(--spacing-md);">Focuses on family therapy, couples counseling, and relationship issues. Helps families and couples improve communication and resolve conflicts.</p>
+            <div class="doctor-tags">
+              <span class="badge badge-primary">Family</span>
+              <span class="badge badge-primary">Couples</span>
+              <span class="badge badge-primary">Relationships</span>
+            </div>
+            <div class="doctor-actions">
+              <a href="#doctor-7" class="btn btn-outline btn-sm">View Profile</a>
+              <a href="pricing.html" class="btn btn-primary btn-sm">Book Consultation</a>
+            </div>
+          </div>
+
+        
+
+
+
+
+
+          <div class="card doctor-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='%236b7280'%3EDr. Rohan%3C/text%3E%3C/svg%3E" alt="Dr. Rohan Malhotra" class="doctor-photo">
+            <h3 class="card-title">Dr. Rohan Malhotra</h3>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Specialty:</strong> Clinical Psychology</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Experience:</strong> 7 years</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Languages:</strong> Hindi, English</p>
+            <p class="text-muted" style="margin-bottom: var(--spacing-sm);"><strong>Location:</strong> Online Only</p>
+            <p class="card-body" style="margin-bottom: var(--spacing-md);">Specializes in sleep disorders, insomnia treatment, and cognitive behavioral therapy for insomnia (CBT-I). Helps clients achieve better sleep quality.</p>
+            <div class="doctor-tags">
+              <span class="badge badge-primary">Sleep</span>
+              <span class="badge badge-primary">Insomnia</span>
+              <span class="badge badge-primary">CBT-I</span>
+            </div>
+            <div class="doctor-actions">
+              <a href="#doctor-8" class="btn btn-outline btn-sm">View Profile</a>
+              <a href="pricing.html" class="btn btn-primary btn-sm">Book Consultation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+
+
+
+    <div id="doctor-1" class="modal">
+      <div class="modal-content">
+        <a href="#" class="modal-close" aria-label="Close modal">&times;</a>
+        <div class="doctor-detail-grid">
+          <div>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-size='18' fill='%236b7280'%3EDr. Priya%3C/text%3E%3C/svg%3E" alt="Dr. Priya Sharma" style="width: 100%; border-radius: var(--border-radius);">
+          </div>
+          <div>
+            <h2>Dr. Priya Sharma</h2>
+            <p><strong>Specialty:</strong> Clinical Psychology</p>
+            <p><strong>Experience:</strong> 12 years</p>
+            <p><strong>Education:</strong> Ph.D. in Clinical Psychology, Mumbai University</p>
+            <p><strong>Languages:</strong> Hindi, English, Marathi</p>
+            <p><strong>Location:</strong> Mumbai, Online</p>
+            <p><strong>Consultation Fee:</strong> ₹2,500 - ₹3,500 per session</p>
+            <hr style="margin: var(--spacing-lg) 0; border: none; border-top: 1px solid var(--color-border);">
+            <h3>About</h3>
+            <p>Dr. Priya Sharma is a licensed clinical psychologist with over 12 years of experience in treating anxiety disorders, depression, and relationship issues. She uses evidence-based therapies including Cognitive Behavioral Therapy (CBT) and mindfulness techniques to help her clients achieve lasting change.</p>
+            <h3>Specializations</h3>
+            <div class="doctor-tags">
+              <span class="badge badge-primary">Anxiety Disorders</span>
+              <span class="badge badge-primary">Depression</span>
+              <span class="badge badge-primary">Relationship Counseling</span>
+              <span class="badge badge-primary">CBT</span>
+              <span class="badge badge-primary">Mindfulness</span>
+            </div>
+            <div style="margin-top: var(--spacing-xl);">
+              <a href="pricing.html" class="btn btn-primary">Book Consultation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+
+
+
+
+    <div id="doctor-2" class="modal">
+      <div class="modal-content">
+        <a href="#" class="modal-close" aria-label="Close modal">&times;</a>
+        <h2>Dr. Rajesh Kumar</h2>
+        <p><strong>Specialty:</strong> Psychiatry</p>
+        <p><strong>Experience:</strong> 15 years</p>
+        <p><strong>Consultation Fee:</strong> ₹3,000 - ₹4,000 per session</p>
+        <p>Expert in mood disorders, bipolar disorder, and psychiatric medication management. Provides comprehensive psychiatric evaluations and treatment.</p>
+        <a href="pricing.html" class="btn btn-primary">Book Consultation</a>
+      </div>
+    </div>
+
+
+
+
+
+
+    <div id="doctor-3" class="modal">
+      <div class="modal-content">
+        <a href="#" class="modal-close" aria-label="Close modal">&times;</a>
+        <h2>Dr. Ananya Mehta</h2>
+        <p><strong>Specialty:</strong> Counseling Psychology</p>
+        <p><strong>Experience:</strong> 8 years</p>
+        <p><strong>Consultation Fee:</strong> ₹2,000 - ₹2,500 per session</p>
+        <p>Focuses on stress management, work-life balance, and personal growth. Helps clients develop coping strategies and build resilience.</p>
+        <a href="pricing.html" class="btn btn-primary">Book Consultation</a>
+      </div>
+    </div>
+
+
+
+
+
+    <div id="doctor-4" class="modal">
+      <div class="modal-content">
+        <a href="#" class="modal-close" aria-label="Close modal">&times;</a>
+        <h2>Dr. Vikram Singh</h2>
+        <p><strong>Specialty:</strong> Child & Adolescent Psychology</p>
+        <p><strong>Experience:</strong> 10 years</p>
+        <p><strong>Consultation Fee:</strong> ₹2,500 - ₹3,000 per session</p>
+        <p>Specializes in working with children and teenagers. Experienced in addressing behavioral issues, ADHD, and adolescent mental health challenges.</p>
+        <a href="pricing.html" class="btn btn-primary">Book Consultation</a>
+      </div>
+    </div>
+
+
+
+
+
+    <div id="doctor-5" class="modal">
+      <div class="modal-content">
+        <a href="#" class="modal-close" aria-label="Close modal">&times;</a>
+        <h2>Dr. Meera Patel</h2>
+        <p><strong>Specialty:</strong> Clinical Psychology</p>
+        <p><strong>Experience:</strong> 14 years</p>
+        <p><strong>Consultation Fee:</strong> ₹3,000 - ₹3,500 per session</p>
+        <p>Expert in trauma therapy, PTSD, and EMDR. Provides compassionate care for individuals dealing with past trauma and its impact on present life.</p>
+        <a href="pricing.html" class="btn btn-primary">Book Consultation</a>
+      </div>
+    </div>
+
+
+
+
+
+
+    <div id="doctor-6" class="modal">
+      <div class="modal-content">
+        <a href="#" class="modal-close" aria-label="Close modal">&times;</a>
+        <h2>Dr. Arjun Reddy</h2>
+        <p><strong>Specialty:</strong> Psychiatry</p>
+        <p><strong>Experience:</strong> 11 years</p>
+        <p><strong>Consultation Fee:</strong> ₹3,500 - ₹4,500 per session</p>
+        <p>Specializes in addiction medicine, substance abuse treatment, and dual diagnosis. Provides comprehensive support for recovery journeys.</p>
+        <a href="pricing.html" class="btn btn-primary">Book Consultation</a>
+      </div>
+    </div>
+
+
+
+
+
+
+    <div id="doctor-7" class="modal">
+      <div class="modal-content">
+        <a href="#" class="modal-close" aria-label="Close modal">&times;</a>
+        <h2>Dr. Sunita Desai</h2>
+        <p><strong>Specialty:</strong> Counseling Psychology</p>
+        <p><strong>Experience:</strong> 9 years</p>
+        <p><strong>Consultation Fee:</strong> ₹,500 - ₹1,000 per session</p>
+        <p>Focuses on family therapy, couples counseling, and relationship issues. Helps families and couples improve communication and resolve conflicts.</p>
+        <a href="pricing.html" class="btn btn-primary">Book Consultation</a>
+      </div>
+    </div>
+
+
+
+
+
+    <div id="doctor-8" class="modal">
+      <div class="modal-content">
+        <a href="#" class="modal-close" aria-label="Close modal">&times;</a>
+        <h2>Dr. Rohan Malhotra</h2>
+        <p><strong>Specialty:</strong> Clinical Psychology</p>
+        <p><strong>Experience:</strong> 7 years</p>
+        <p><strong>Consultation Fee:</strong> ₹1,000 - ₹1,500 per session</p>
+        <p>Specializes in sleep disorders, insomnia treatment, and cognitive behavioral therapy for insomnia (CBT-I). Helps clients achieve better sleep quality.</p>
+        <a href="pricing.html" class="btn btn-primary">Book Consultation</a>
+      </div>
+    </div>
+  </main>
+
+
+
+
+
+
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>MIND NOVA</h3>
+        <p>Your trusted partner in mental health and wellness. We connect you with verified professionals and provide resources to support your journey.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" aria-label="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="assessment.html">Assessment</a></li>
+          <li><a href="doctors.html">Doctors</a></li>
+          <li><a href="awareness.html">Awareness Hub</a></li>
+          <li><a href="groups.html">Groups & Sessions</a></li>
+          <li><a href="trips.html">Group Trips</a></li>
+          <li><a href="seminars.html">Seminars</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+
+
+
+
+      <div class="footer-section">
+        <h3>Subscribe</h3>
+        <p>Get mental health tips and updates delivered to your inbox.</p>
+        <form class="footer-subscribe">
+          <label for="footer-email" class="sr-only">Email address for newsletter subscription</label>
+          <input type="email" id="footer-email" name="email" placeholder="Your email address" aria-label="Email address">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+
+
+
+
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>Email: support@mindnova.com<br>Phone: +91-88400-45634</p>
+        <p style="margin-top: var(--spacing-md); font-size: var(--font-size-sm);">
+          <strong>For emergencies:</strong><br>
+          Call on 022-2754-6669 emergency services immediately.
+        </p>
+      </div>
+    </div>
+
+
+
+    
+    <div class="footer-bottom">
+      <p><a href="#" style="color: rgba(255,255,255,0.6);">Privacy Policy</a> | <a href="#" style="color: rgba(255,255,255,0.6);">Terms of Service</a></p>
+    </div>
+  </footer>
+</body>
+</html>
+
